@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container" id="app">
+        
+        <main class="weather-panel">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="location-search" placeholder="Search city...">
+                    <div id="search-suggestions" class="suggestions-dropdown"></div>
+                </div>
+                <button id="toggle-disaster-btn" class="action-btn">
+                    <i class="fa-solid fa-layer-group"></i> Disasters
+                </button>
+            </header>
+
+            <div class="current-weather">
+                <h1 class="location" id="loc-name">Bhopal, Madhya Pradesh</h1>
+                <div class="hero-temp">
+                    <span class="temp" id="temp-val">--°C</span>
+                    <span class="condition" id="weather-desc"><i class="fa-solid fa-cloud"></i> Fetching...</span>
+                </div>
+            </div>
+
+            <div class="map-placeholder" id="main-map"></div>
+
+            <h3 class="section-title">Current weather</h3>
+            <div class="weather-grid">
+                <div class="grid-item">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <span class="label">Feels like</span>
+                    <span class="value" id="feels-like">--°C</span>
+                </div>
+                <div class="grid-item">
+                    <i class="fa-solid fa-wind"></i>
+                    <span class="label">Wind</span>
+                    <span class="value" id="wind-val">-- km/h</span>
+                </div>
+                <div class="grid-item">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span class="label">Humidity</span>
+                    <span class="value" id="humidity-val">--%</span>
+                </div>
+                <div class="grid-item">
+                    <i class="fa-solid fa-sun"></i>
+                    <span class="label">UV Index</span>
+                    <span class="value" id="uv-val">--</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Air Quality</h3>
+            <div class="aqi-card">
+                <div class="aqi-circle" id="aqi-val">--</div>
+                <div class="aqi-info">
+                    <h4 id="aqi-desc">Fetching...</h4>
+                    <p>Max values from other air quality stations</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="disaster-panel" id="disaster-panel">
+            <header class="panel-header">
+                <h2>Global Events (24h)</h2>
+                <button id="close-disaster-btn" class="action-btn icon-only">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </header>
+
+            <div class="map-placeholder small-map" id="disaster-map"></div>
+
+            <div class="event-list" id="event-list-container">
+                <p style="text-align: center; color: var(--text-muted); padding: 20px;">Loading global events...</p>
+            </div>
+        </aside>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

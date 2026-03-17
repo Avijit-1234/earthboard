@@ -1,0 +1,9 @@
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+
+# for later
+.env
+node_modules/
