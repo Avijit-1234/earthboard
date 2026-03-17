@@ -1,7 +1,9 @@
 # Earthboard 🌍
 **A real-time environmental intelligence dashboard tracking global geological events and local meteorological shifts.**
 
-
+<p align="center">
+  <img src="assets/img01.png" width="48%" alt="Dashboard">
+</p>
 
 ### 🔗 [Live Deployment](https://avijit-1234.github.io/earthboard/)
 
